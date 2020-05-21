@@ -133,8 +133,9 @@ urlpatterns = (
 
     page('firefox/features/safebrowser', 'firefox/features/safebrowser.html'),
 
-    page('firefox/browsers/compare', 'firefox/compare/index.html'),
+    page('firefox/browsers/compare', 'firefox/compare/index.html', ftl_files=['firefox/compare', 'firefox/compare/shared']),
     page('firefox/browsers/compare/chrome', 'firefox/compare/chrome.html'),
+    page('firefox/browsers/compare/edge', 'firefox/compare/edge.html'),
     page('firefox/browsers/compare/ie', 'firefox/compare/ie.html'),
     page('firefox/browsers/compare/opera', 'firefox/compare/opera.html'),
     page('firefox/browsers/compare/safari', 'firefox/compare/safari.html'),

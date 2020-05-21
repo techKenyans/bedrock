@@ -4,12 +4,12 @@
 
 {% extends "firefox/base/base-protocol.html" %}
 
-{% add_lang_files "firefox/compare/ie" "firefox/compare/shared" %}
+{% add_lang_files "firefox/compare/edge" "firefox/compare/shared" %}
 
-{% block page_title %}{{ _('Firefox vs. Internet Explorer: Which is the better browser for you?') }}{% endblock %}
+{% block page_title %}{{ _('Firefox vs. Microsoft Edge: Which is the better browser for you?') }}{% endblock %}
 
 {% block page_desc %}
-{{ _('Compare Internet Explorer to the Firefox Browser to find out which is the better browser for you.') }}
+{{ _('Compare Microsoft Edge to the Firefox Browser to find out which is the better browser for you.') }}
 {% endblock %}
 
 {% block page_css %}
@@ -19,14 +19,14 @@
 {% block content %}
 {% include '/firefox/compare/includes/subnav.html' %}
 
-<section class="mzp-c-hero compare-details-hero compare-details-hero--ie">
+<section class="mzp-c-hero compare-details-hero compare-details-hero--edge">
   <div class="mzp-l-content l-compare-details-content">
     <div class="mzp-c-hero-body">
       <div class="compare-details-hero-image">
           <img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ _('Firefox logo') }}">
-          <img src="{{ static('img/logos/ie/logo-ie.png') }}" height="36" width="36" alt="{{ _('Internet Explorer logo') }}">
+          <img src="{{ static('img/logos/edge/logo-edge.png') }}" height="36" width="36" alt="{{ _('Microsoft Edge logo') }}">
       </div>
-      <h1 class="mzp-c-hero-title">{{ _('Comparing Firefox Browser with Microsoft Internet Explorer') }}</h1>
+      <h1 class="mzp-c-hero-title">{{ _('Comparing Firefox Browser with Microsoft Edge') }}</h1>
     </div>
   </div>
 </section>
@@ -36,23 +36,17 @@
     <section class="compare-details-section-summary">
         <p class="compare-details-section-intro">
           {% trans %}
-          While Microsoft’s Internet Explorer still comes pre-installed on most Windows-based PCs, clearly Microsoft would prefer you to use their Edge browser, which is set as the default when you purchase.
+          With Windows 10, Microsoft introduced its Edge browser to compete with Firefox and Chrome making it the default browser pre-installed on millions of PCs sold. Even so, users were slow to adopt it and Microsoft eventually announced plans to relaunch Edge as a Chromium-based browser (Chromium of course being Google’s Open Source browser project).
           {% endtrans %}
         </p>
 
         <p>
           {% trans %}
-          Microsoft discontinued its Internet Explorer brand several years ago, in favor of its updated Edge browser for Windows 10. However, slow adoption for Edge created room for Internet Explorer to live on, mainly for business compatibility reasons.
+          Here we’ll compare our Firefox Browser to the Chromium-based Microsoft Edge in terms of privacy, utility, and portability, to help you have a better understanding of which browser better suits your needs and preferences.
           {% endtrans %}
         </p>
 
-        <p>
-          {% trans %}
-          Here we’ll compare our Firefox Browser with Internet Explorer in terms of security, utility, and portability. We’ll help you understand the differences between how a modern browser like Firefox that adheres to web standards compares with the browser you may be using for business purposes or out of old habits that die hard.
-          {% endtrans %}
-        </p>
-
-        {{ high_res_img('img/firefox/compare/compare-browser-ie.png', {'alt': '', 'width': '543', 'height': '424', 'class': 'compare-details-image'}) }}
+        {{ high_res_img('img/firefox/compare/compare-browser-edge.png', {'alt': '', 'width': '545', 'height': '424', 'class': 'compare-details-image'}) }}
     </section>
 
     <section class="compare-section-privacy">
@@ -68,7 +62,7 @@
             <tr>
               <th>{{ _('Security and Privacy') }}</th>
               <th scope="col"><img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ _('Firefox') }}"></th>
-              <th scope="col"><img src="{{ static('img/logos/ie/logo-ie.png') }}" height="36" width="36" alt="{{ _('Internet Explorer') }}"></th>
+              <th scope="col"><img src="{{ static('img/logos/edge/logo-edge.png') }}" height="36" width="36" alt="{{ _('Microsoft Edge') }}"></th>
             </tr>
           </thead>
           <tbody>
@@ -96,23 +90,34 @@
         </table>
 
       <p>
-        {% trans attrs='href="https://www.telegraph.co.uk/technology/2019/02/08/stop-using-internet-explorer-warns-microsofts-security-chief/" rel="external noopener" data-cta-type="link" data-cta-name="Microsoft security chief warned"'|safe %}
-        If you haven’t moved on from using Internet Explorer, the security risk factor alone should be enough to convince you. <a {{ attrs }}>Microsoft’s own security chief has warned</a> millions of people who continue to use Internet Explorer as their main web browser that they are placing themselves in “peril.”
+        {% trans %}
+        Edge is integrated into the Windows 10 platform and runs in a sandbox environment, meaning it isolates programs and prevents malicious programs from spying on your computer. It has a built-in SmartScreen that scans the reputation of sites you visit and blocks suspicious sites. To enhance privacy, Edge allows you to use biometrics or a PIN with Windows Hello  instead of passwords for online authentication.
+        {% endtrans %}
+      </p>
+
+      <p>
+        {% trans attrs='href="%s" data-cta-type="link" data-cta-name="privacy policy"'|safe|format(url('privacy.notices.firefox')) %}
+        At Firefox, our <a {{ attrs }}>privacy policy</a> is transparent and in plain language. We actually put a lot of work into making sure it was straightforward and easy to read. We pride ourselves in protecting our users security and privacy. With Enhanced Tracking Protection now on by default, we block 2000+ trackers automatically. Trackers are those little pieces of code that try to piece together what you're doing across multiple internet sites to build a composite and detailed picture of who you are, compromising your privacy all just to target better ads.
+        {% endtrans %}
+      </p>
+
+      <img src="{{ static('img/firefox/compare/compare-privacy-eyes.svg') }}" alt="" height="217" width="320" class="compare-details-image">
+
+      <p>
+        {% trans attrs='href="%s" data-cta-text="Privacy Protections" data-cta-type="link"'|safe|format(url('firefox.privacy.products')) %}
+        Your <a {{ attrs }}>Privacy Protections</a> shows you the trackers and cookies that pages have attempted to leave, and how many Firefox has blocked for you.
         {% endtrans %}
       </p>
 
       <p>
         {% trans %}
-        Microsoft is no longer supporting new development for Internet Explorer, which means security concerns are rampant. Microsoft openly acknowledges the fact that vulnerabilities exist within basically every version of Internet Explorer.
+        In Firefox, Private Browsing mode automatically erases your browsing information like passwords, cookies, and history, leaving no trace after you close out the session. Edge on the other hand, actually records browsing history in their private mode (called “InPrivate”) and it’s a relatively easy task for someone to reconstruct your full browsing history, regardless of whether your browsing was done in regular or InPrivate mode.
         {% endtrans %}
       </p>
 
-      <img src="{{ static('img/firefox/compare/compare-privacy-locks.svg') }}" alt="" height="217" width="320" class="compare-details-image">
-
       <p>
-        {% trans lockwise='href="%s" data-cta-type="link" data-cta-name="Lockwise"'|safe|format(url('firefox.lockwise.lockwise')),
-                 privacy='href="%s" data-cta-type="link" data-cta-name="privacy policy"'|safe|format(url('privacy.notices.firefox')) %}
-        So what’s the solution if your company is running outdated apps that only work on Internet Explorer? Our best advice for you personally is, don’t mix business with pleasure. The simple thing to do is download and use a more secure browser like Firefox. Then, if you need to do things like check your personal email or shop online, you can just switch over to the more secure browser. The bottom line is, if Microsoft is warning people not to use Internet Explorer, don’t use it. Your online privacy and security are not worth risking because you (or your company) have a hard time breaking an old habit. We make Firefox with security and privacy features like <a {{ lockwise }}>Lockwise</a>, our password manager, private browsing and lots of other add-ons that help us make the web safer for you. Also, our <a {{ privacy }}>Privacy Policy</a> is straightforward: we tell you what we know about you, and why we collect that information. All of these things obviously go beyond what Internet Explorer offers, and even what other modern browsers like Google Chrome and Microsoft Edge offer.
+        {% trans %}
+        Both browsers are relatively equal in terms of data encryption. However, if online privacy and transparency are important to you, then Firefox is clearly a better choice here.
         {% endtrans %}
       </p>
 
@@ -131,7 +136,7 @@
             <tr>
               <th>{{ _('Utility') }}</th>
               <th scope="col"><img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ _('Firefox') }}"></th>
-              <th scope="col"><img src="{{ static('img/logos/ie/logo-ie.png') }}" height="36" width="36" alt="{{ _('Internet Explorer') }}"></th>
+              <th scope="col"><img src="{{ static('img/logos/edge/logo-edge.png') }}" height="36" width="36" alt="{{ _('Microsoft Edge') }}"></th>
             </tr>
           </thead>
           <tbody>
@@ -183,27 +188,51 @@
               <tr>
                 <th scope="row">{{ _('In-browser screenshot tool') }}</th>
                 <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-                <td><img alt="{{ _('No') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+                <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
               </tr>
           </tbody>
         </table>
 
       <p>
         {% trans %}
-        Alarmingly, 4 to 5% of all desktop web traffic comes through Internet Explorer. That might not seem like a lot, but in reality it means millions of people are being served a poor internet experience with slow loading and rendering times, pages that won’t display properly — all on top of the security issues already discussed.
+        Firefox is a fast and open source browser, which means users can customize their browsing experience in every way possible. Firefox also allows the casual user several different ways to customize the UI with applying different themes and toolbar configurations. Since our browser has always been open source we have a large following of devoted developers who have created an extensive library of add-ons and browser extensions.
         {% endtrans %}
       </p>
 
       <p>
         {% trans %}
-        Really the only reasons to use Internet Explorer are for developers to test what their sites look like on an older browser or if a company has business-critical apps that only work with the Internet Explorer browser.
+        Since Edge has moved to the processor intensive Chromium platform, you can expect it to run a little slower, especially if you have multiple programs running at once. However, with Chromium platform comes a massive library of extensions as well as a decent level of UI customization that Edge did not have before it’s move to Chromium.
         {% endtrans %}
       </p>
 
       <p>
-        {% trans pocket='href="%s" data-cta-type="link" data-cta-name="Pocket"'|safe|format(url('firefox.pocket')),
-                 products='href="%s" data-cta-type="link" data-cta-name="our other Firefox products"'|safe|format(url('firefox')) %}
-        On the other end of the spectrum, Firefox is one of the most frequently updated browsers, and comes loaded with lots of useful and interesting features, like <a {{ pocket }}>Pocket</a> that suggests interesting content every time you open a new tab. Our unified search and web address bar, or <em>Awesome Bar</em> as we call it, also gives you suggestions based on your existing bookmarks and tags, history, open tabs and popular searches. And with a free Firefox account you also get access to all your settings and <a {{ products }}>our other Firefox products</a> on any device simply by signing in. Plus the peace of mind of knowing your browser is proactively working to protect your personal data.
+        {% trans %}
+        Edge has some nice UI features, like their tab previews which can make it easy to find the right open tabs if you’ve got a lot of them open. Another helpful tab-related feature lets you set aside any active tabs that you aren’t using but don’t want to close down.
+        {% endtrans %}
+      </p>
+
+      <p>
+        {% trans attrs='href="%s" data-cta-type="link" data-cta-name="Pocket feature"'|safe|format(url('firefox.pocket')) %}
+        Firefox features a scrolling tab interface, which keeps tab information viewable and scrolls them horizontally instead of shrinking them down to just favicon size.  Also whenever you open a new tab, our <a {{ attrs }}>Pocket feature</a> suggests relevant articles and content for you. Plus with Pocket, you can also save articles, videos, and other content with one click, for reading at a later time.
+        {% endtrans %}
+      </p>
+
+      <p>
+        {% trans %}
+        Firefox and Edge both offer excellent reading modes. With Firefox you just tap on the small icon in the search bar and the browser strips down all unnecessary elements and presents you a clean looking article. In Edge you just tap on the small book icon and browser to get a clean easy-to-read UI.
+        {% endtrans %}
+      </p>
+
+      <p>
+        {% trans attrs='href="https://support.mozilla.org/kb/enhanced-tracking-protection-firefox-desktop" rel="external noopener" data-cta-text="Enhanced Tracking Protection" data-cta-type="link"'|safe %}
+        Firefox also includes lots of handy built-in features by default like <a {{ attrs }}>Enhanced Tracking Protection</a>, a built-in screenshot tool, large file sending and more.
+        {% endtrans %}
+      </p>
+
+      <p>
+        {# L10n: "Out of the gate" means from the very start. Alternative: "From the start,". Race horses are held behind a gate that is opened to release all the horses at the same time at the start of the race, so a horse that leads the race from the very start is said to lead "right out of the gate." #}
+        {% trans %}
+        Out of the gate, Firefox has more features and integrations built into the browser and readily available on download. And while both browsers have a tremendous number of add-ons and extensions available, Edge’s compatibility with Google’s Chromium platform gives it the advantage in terms of sheer numbers.
         {% endtrans %}
       </p>
 
@@ -222,7 +251,7 @@
             <tr>
               <th>{{ _('Portability') }}</th>
               <th scope="col"><img src="{{ static('protocol/img/logos/firefox/browser/logo.svg') }}" height="36" width="36" alt="{{ _('Firefox') }}"></th>
-              <th scope="col"><img src="{{ static('img/logos/ie/logo-ie.png') }}" height="36" width="36" alt="{{ _('Internet Explorer') }}"></th>
+              <th scope="col"><img src="{{ static('img/logos/edge/logo-edge.png') }}" height="36" width="36" alt="{{ _('Microsoft Edge') }}"></th>
             </tr>
           </thead>
           <tbody>
@@ -234,12 +263,12 @@
             <tr>
               <th scope="row">{{ _('Mobile OS availability') }}</th>
               <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ _('No') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
             <tr>
               <th scope="row">{{ _('Syncs with mobile') }}</th>
               <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ _('No') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
             <tr>
               <th scope="row">{{ _('Password management') }}</th>
@@ -249,21 +278,26 @@
             <tr>
               <th scope="row">{{ _('Master Password') }}</th>
               <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ _('No') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
           </tbody>
         </table>
 
       <p>
-        {# L10n: "sunset" here means Microsoft is officially ending production of Internet Explorer. Alternative: "retire" #}
         {% trans %}
-        As Microsoft has made the move to sunset the Internet Explorer browser, it no longer supports any version for iOS, and has never been available for Android. Which means unless you’re running a Windows-based laptop or desktop, you won’t have access to your bookmarks, browsing history, saved passwords, and other information that modern browsers sync across devices.
+        With Internet Explorer, Microsoft learned from its lack of availability across platforms and made Edge available for macOS and Android. The software is now readily available on iOS, Android, Windows and Mac.
+        {% endtrans %}
+      </p>
+
+      <p>
+        {% trans attrs='href="%s" data-cta-type="link" data-cta-name="free account"'|safe|format(url('firefox.accounts')) %}
+        Firefox has been available on iOS, Android, Windows, macOS and Linux for years. And as you would expect with any modern browser, Firefox lets you log in with a <a %(attrs)s>free account</a> and sync data such as passwords, browsing history, bookmarks, and open tabs between your computer, tablet and phone. It also allows you to sync across platforms as well.
         {% endtrans %}
       </p>
 
       <p>
         {% trans %}
-        Firefox works on any platform, including Windows, macOS, Linux, Android and iOS. Which also means  you can sync all your information across platforms. So if you’re browsing on a Windows-based laptop, you can pick up where you left off when you move to browsing on your iPhone or Android device. This convenience should come standard with any modern web browser, and is sorely lacking with Internet Explorer.
+        Edge also allows you to connect your associated Microsoft account and sign in to sync your favorites, history, passwords, and more between your computer and iOS or Android devices, although some Android tablets are not currently supported.
         {% endtrans %}
       </p>
 
@@ -277,23 +311,21 @@
       </header>
 
       <p>
-        {% trans %}
-        There was a time not so long ago where Internet Explorer was the most popular and widely used browser in the world. Times have changed and so has technology, but unfortunately Internet Explorer has pretty much stayed the same. Microsoft itself openly implores users to stop using Internet Explorer and instead switch to their newer Chromium-based Edge browser.
+        {% trans attrs='href="%s" data-cta-type="link" data-cta-name="Mozilla"'|safe|format(url('mozorg.home')) %}
+        Aside from sucking up a lot of computing power, Edge running on Chromium has answered a lot of users’ needs for functionality and features. But there’s still a lot to account for in terms of the browser’s privacy protections. It’s our assessment that Firefox is still a better choice for most people to use in their daily lives, based not only on functionality but more importantly on our transparency in how we collect user data, what exactly we collect, and what we do with it. Because our parent company is <a {{ attrs }}>Mozilla</a>, a non-profit organization dedicated to internet privacy and freedom, we simply have a different set of priorities when it comes to users’ data.
         {% endtrans %}
       </p>
 
       <p>
-        {# Download link should be locale neutral. See issue #7982 #}
-        {# L10n: "Nana" is a common nickname for a grandmother in many English-speaking countries. Use a similar name for a grandmother in your language or culture. #}
-        {% trans attrs='href="/firefox/download/thanks/" data-cta-type="link" data-cta-name="download Firefox"'|safe %}
-        Our opinion is just to go with a trusted, private browser with a track record of delivering a great experience across devices. In a head-to-head comparison, it’s really no contest at all. Firefox is hands down the winner across all assessment categories. If you do find yourself at Nana’s house firing up Internet Explorer, maybe you want to do Nana a favor and <a {{ attrs }}>download Firefox</a> for her.
+        {% trans %}
+        The bottom line is that while we suggest using Firefox, the best browser for you ultimately will be the one that fits your individual needs with extension support, browsing tools  customization, speed, privacy and security.
         {% endtrans %}
       </p>
 
       <div class="compare-version-disclaimer">
         <p>
           {% trans %}
-          The comparisons made here were done so across browser release versions as follows:<br> Firefox (70) | Internet Explorer (11)
+          The comparisons made here were done so across browser release versions as follows:<br> Firefox (70) | Edge (44)
           {% endtrans %}
         </p>
       </div>
@@ -310,3 +342,4 @@
 {% block js %}
   {{ js_bundle('firefox_compare_details') }}
 {% endblock %}
+

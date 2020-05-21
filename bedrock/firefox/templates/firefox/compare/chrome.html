@@ -81,7 +81,7 @@
             <tr>
               <th scope="row">{{ _('Blocks third-party tracking cookies') }}</th>
               <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-              <td><img alt="{{ _('No') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+              <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
             </tr>
             <tr>
               <th scope="row">{{ _('Blocks cryptomining scripts') }}</th>
@@ -203,7 +203,7 @@
               <tr>
                 <th scope="row">{{ _('In-browser screenshot tool') }}</th>
                 <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
-                <td><img alt="{{ _('No') }}" src="{{ static('img/firefox/compare/icon-dash.svg') }}" height="24" width="24"></td>
+                <td><img alt="{{ _('Yes') }}" src="{{ static('img/firefox/compare/icon-check.svg') }}" height="24" width="24"></td>
               </tr>
           </tbody>
         </table>
@@ -326,11 +326,13 @@
         {% endtrans %}
       </p>
 
-      <p class="compare-version-disclaimer">
-        {% trans %}
-        The comparisons made here were done so across browser release versions as follows:<br> Firefox (70) | Chrome (74)
-        {% endtrans %}
-      </p>
+      <div class="compare-version-disclaimer">
+        <p>
+          {% trans %}
+          The comparisons made here were done so across browser release versions as follows:<br> Firefox (70) | Chrome (74)
+          {% endtrans %}
+        </p>
+      </div>
 
       <aside class="secondary-download-cta">
         {{ download_firefox(dom_id='download-secondary', alt_copy=ftl('download-button-download-firefox'), download_location='secondary cta') }}

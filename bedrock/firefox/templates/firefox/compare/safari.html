@@ -317,11 +317,13 @@
         {% endtrans %}
       </p>
 
-      <p class="compare-version-disclaimer">
-        {% trans %}
-        The comparisons made here were done so across browser release versions as follows:<br> Firefox (70) | Safari (12)
-        {% endtrans %}
-      </p>
+      <div class="compare-version-disclaimer">
+        <p>
+          {% trans %}
+          The comparisons made here were done so across browser release versions as follows:<br> Firefox (70) | Safari (12)
+          {% endtrans %}
+        </p>
+      </div>
 
       <aside class="secondary-download-cta">
         {{ download_firefox(dom_id='download-secondary', alt_copy=ftl('download-button-download-firefox'), download_location='secondary cta') }}
