@@ -5,7 +5,6 @@ from fluent.migrate.helpers import VARIABLE_REFERENCE, TERM_REFERENCE
 from fluent.migrate import REPLACE, COPY
 
 chrome = "firefox/compare/chrome.lang"
-shared = "firefox/compare/shared.lang"
 
 def migrate(ctx):
     """Migrate bedrock/firefox/templates/firefox/compare/chrome.html, part {index}."""

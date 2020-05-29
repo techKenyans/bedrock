@@ -54,3 +54,4 @@ compare-shared-download-the-app = Download the app
 compare-shared-desktop = Desktop
 compare-shared-brand-name-android = { -brand-name-android }
 compare-shared-brand-name-ios = { -brand-name-ios }
+compare-shared-compare-browsers = Compare Browsers
