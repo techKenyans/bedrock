@@ -731,12 +731,7 @@ class NewView(L10nTemplateView):
         if variant not in self.variations:
             variant = None
 
-        if locale == 'ru' and switch('firefox-yandex'):
-            template = 'firefox/new/trailhead/download-yandex.html'
-        elif ftl_file_is_active('firefox/new/download'):
-            template = 'firefox/new/trailhead/download.html'
-        else:
-            template = 'firefox/new/protocol/download.html'
+        template = 'firefox/new/desktop/download.html'
 
         return [template]
 

@@ -15,6 +15,7 @@ from bedrock.utils import expand_locale_groups
 
 CSS_TEMPLATE = '<link href="%s" rel="stylesheet" type="text/css" />'
 JS_TEMPLATE = '<script type="text/javascript" src="%s" charset="utf-8"></script>'
+JS_ASYNC_TEMPLATE = '<script type="text/javascript" src="%s" charset="utf-8" async></script>'
 
 
 @library.global_function
@@ -128,6 +129,17 @@ def js_bundle(name):
     path = 'js/BUNDLES/{}.js'.format(name)
     path = staticfiles_storage.url(path)
     return jinja2.Markup(JS_TEMPLATE % path)
+
+
+@library.global_function
+def js_async_bundle(name):
+    """Include a JS bundle in the template.
+
+    Bundles are defined in the "media/static-bundles.json" file.
+    """
+    path = 'js/BUNDLES/{}.js'.format(name)
+    path = staticfiles_storage.url(path)
+    return jinja2.Markup(JS_ASYNC_TEMPLATE % path)
 
 
 @library.global_function
