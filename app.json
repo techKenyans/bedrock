@@ -13,7 +13,7 @@
     "CSP_EXTRA_FRAME_SRC": "*.mozaws.net",
     "DB_DOWNLOAD_IGNORE_GIT": "True",
     "DEBUG": "False",
-    "DEV": "True",
+    "DEV": "False",
     "GTM_CONTAINER_ID": "GTM-MW3R8V",
     "LOG_LEVEL": "INFO",
     "PROD_DETAILS_STORAGE": "product_details.storage.PDDatabaseStorage",
