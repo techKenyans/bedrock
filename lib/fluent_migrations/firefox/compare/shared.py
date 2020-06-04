@@ -40,6 +40,7 @@ compare-shared-portability = {COPY(shared, "Portability",)}
 compare-shared-security-and-privacy-strong = {COPY(shared, "Security and <strong>Privacy</strong>",)}
 compare-shared-utility-strong = {COPY(shared, "<strong>Utility</strong>",)}
 compare-shared-portability-strong = {COPY(shared, "<strong>Portability</strong>",)}
+compare-shared-overall-assessment = {COPY(shared, "Overall Assessment",)}
 compare-shared-the-comparisons-made-here = {COPY(shared, "The comparisons made here were done so across browser release versions as follows:",)}
 compare-shared-brand-name-firefox = { -brand-name-firefox }
 compare-shared-brand-name-chrome = { -brand-name-chrome }
