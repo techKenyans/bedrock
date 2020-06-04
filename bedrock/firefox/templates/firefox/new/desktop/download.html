@@ -12,6 +12,10 @@
   {{ css_bundle('firefox_desktop_download') }}
 {% endblock %}
 
+{% block site_js %}
+  {{ js_bundle('protocol-required') }}
+{% endblock %}
+
 {% set referrals = '?utm_source=www.mozilla.org&utm_medium=referral&utm_campaign=firefox-desktop' %}
 
 {% block content %}
@@ -416,7 +420,8 @@
 {% endblock %}
 
 {% block js %}
-  {{ js_async_bundle('firefox_desktop_download') }}
+  {{ js_defer_bundle('protocol-defer') }}
+  {{ js_defer_bundle('firefox_desktop_download') }}
 
   {% if switch('stub-attribution-macos') %}
     {{ js_bundle('stub-attribution-macos') }}

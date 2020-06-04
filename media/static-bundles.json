@@ -1294,6 +1294,38 @@
     },
     {
       "files": [
+        "js/libs/jquery-3.4.1.min.js",
+        "js/base/mozilla-utils.js",
+        "js/base/mozilla-client.js",
+        "js/base/class-list-polyfill.js",
+        "js/base/mozilla-run.js",
+        "protocol/js/protocol-supports.js",
+        "protocol/js/protocol-utils.js",
+        "js/base/base-page-init.js",
+        "js/base/core-datalayer.js",
+        "js/base/core-datalayer-init.js",
+        "js/base/search-params.js",
+        "js/base/mozilla-fxa-link.js",
+        "js/base/mozilla-fxa-link-init.js",
+        "js/base/fxa-utm-referral.js",
+        "js/base/fxa-utm-referral-init.js"
+      ],
+      "name": "protocol-required"
+    },
+    {
+      "files": [
+        "protocol/js/protocol-menu.js",
+        "protocol/js/protocol-navigation.js",
+        "js/base/protocol/init-navigation.js",
+        "protocol/js/protocol-lang-switcher.js",
+        "js/base/protocol/init-lang-switcher.js",
+        "protocol/js/protocol-details.js",
+        "protocol/js/protocol-footer.js"
+      ],
+      "name": "protocol-defer"
+    },
+    {
+      "files": [
         "js/base/mozilla-utils.js",
         "js/base/mozilla-client.js",
         "js/base/class-list-polyfill.js",
