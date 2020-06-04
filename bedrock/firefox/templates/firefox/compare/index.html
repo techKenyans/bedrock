@@ -48,7 +48,10 @@
         </p>
 
         <div class="compare-section-summary-image">
+          {# Odd bug in Safari 13.1 makes animation fail when SVG is in img; object evades that but Chrome doesn't render the object, so the nested img makes Chrome happy. ¯\_(ツ)_/¯ #}
+          <object data="{{ static('img/firefox/compare/compare-hero.svg') }}" height="403" width="532">
             <img src="{{ static('img/firefox/compare/compare-hero.svg') }}" alt="" height="403" width="532">
+          </object>
         </div>
       </div>
 
