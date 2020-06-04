@@ -1105,13 +1105,16 @@ main {
 }
 
 .noodle-browser {
+    @include at2x('/media/img/firefox/new/desktop/hero.png', 512px, 371px);
     background-color: $color-light-gray-10;
     border-radius: 4px;
     box-shadow: $box-shadow-md;
+    height: 371px;
     left: -30px;
     max-width: none;
     position: absolute;
     top: 100px;
+    width: 512px;
 }
 
 .noodle-screen {
